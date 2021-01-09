@@ -1,4 +1,5 @@
 from random import*
+from math import*
 # # 퀴즈1 챕터2
 
 # station = "사당"
@@ -51,14 +52,31 @@ from random import*
 # print("커피 당첨자 : {0}".format(winners[1:]))
 # print("-- 축하합니다 -- ")
 
-# 퀴즈 5 챕터 6
-i = 0
-customers = [[i, randrange(5, 51)] for i in range(1, 51)]
+# # 퀴즈 5 챕터 6
+# i = 0
+# customers = [[i, randrange(5, 51)] for i in range(1, 51)]
 
-for x in customers:
-    if 5 <= x[1] <= 15:
-        print("[0] {0}번째 손님 (소요시간 : {1}분)".format(x[0], x[1]))
-        i += 1
+# for x in customers:
+#     if 5 <= x[1] <= 15:
+#         print("[0] {0}번째 손님 (소요시간 : {1}분)".format(x[0], x[1]))
+#         i += 1
+#     else:
+#         print("[ ] {0}번째 손님 (소요시간 : {1}분)".format(x[0], x[1]))
+# print("총 탑승 승객 :{0}".format(i))
+
+# #퀴즈 6 챕터 7
+
+
+def std_weight(height, gender):
+    height = height/100
+    if gender == "men":
+        std = height*height*22
+        std = round(std, 2)
+        print("키 {0}cm 남자의 표준 체중은 {1}kg 입니다.".format(height*100, std))
     else:
-        print("[ ] {0}번째 손님 (소요시간 : {1}분)".format(x[0], x[1]))
-print("총 탑승 승객 :{0}".format(i))
+        std = height*height*21
+        std = round(std, 2)
+        print("키 {0}cm 여자의 표준 체중은 {1}kg 입니다.".format(height*100, std))
+
+
+std_weight(175, "men")
