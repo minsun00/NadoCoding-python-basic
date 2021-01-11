@@ -67,16 +67,22 @@ from math import*
 # #퀴즈 6 챕터 7
 
 
-def std_weight(height, gender):
-    height = height/100
-    if gender == "men":
-        std = height*height*22
-        std = round(std, 2)
-        print("키 {0}cm 남자의 표준 체중은 {1}kg 입니다.".format(height*100, std))
-    else:
-        std = height*height*21
-        std = round(std, 2)
-        print("키 {0}cm 여자의 표준 체중은 {1}kg 입니다.".format(height*100, std))
+# def std_weight(height, gender):
+#     height = height/100
+#     if gender == "men":
+#         std = height*height*22
+#         std = round(std, 2)
+#         print("키 {0}cm 남자의 표준 체중은 {1}kg 입니다.".format(height*100, std))
+#     else:
+#         std = height*height*21
+#         std = round(std, 2)
+#         print("키 {0}cm 여자의 표준 체중은 {1}kg 입니다.".format(height*100, std))
 
 
-std_weight(175, "men")
+# std_weight(175, "men")
+
+# 퀴즈 7 챕터 8
+
+for week in range(1, 51):
+    with open("{0}주차.text".format(week), "w", encoding="utf8") as weeks_file:
+        weeks_file.write("- {0} 주차 주간보고 -\n부서 :\n이름 :\n업무 요약 :".format(week))
