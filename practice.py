@@ -464,3 +464,102 @@
 
 # with open("study.text", "r", encoding="utf8") as study_file:
 #     print(study_file.read())
+# # --------------------------------------------------------챕터 9-1 class----------------------------------------------------------------
+# # 아래 내용은 비효율적
+
+# name = "마린"  # 유닛
+# hp = 40
+# damage = 5
+
+# print("{} 유닛이 생성되었습니다".format(name))
+# print("체력 {0}, 공격력 {1}\n".format(hp, damage))
+
+# tank_name = "탱크"
+# tank_hp = 150
+# tank_damage = 35
+
+# print("{0} 유닛이 생성되었습니다".format(tank_name))
+# print("체력 {0}, 공격력 {1}\n".format(tank_hp, tank_damage))
+
+# tank2_name = "탱크"
+# tank2_hp = 150
+# tank2_damage = 35
+
+# print("{0} 유닛이 생성되었습니다".format(tank_name))
+# print("체력 {0}, 공격력 {1}\n".format(tank_hp, tank_damage))
+
+
+# def attack(name, location, damage):
+#     print("{0} : {1} 방향으로 적군을 공격 합니다. [공격력 {2}]".format(
+#         name, location, damage))
+
+
+# attack(name, "1시", damage)
+# attack(tank_name, "1시", tank_damage)
+# attack(tank2_name, "1시", tank2_damage)
+
+# # 위처럼 하면 비효율적 ------------------------------------------------------------------------------------------------------------
+# class unit:
+#     def __init__(self, name, hp, damage):  # __init__ 생성자 클래스로 만들어지는것 객체 마린과 탱크는 unit 클래스에 인스탄트다
+#         self.name = name  # self. 뒤에 오는거 맴버 변수다
+#         self.hp = hp
+#         self.damage = damage
+#         print("{0} 유닛이 생성 되었습니다.".format(self.name))
+#         print("체력{0}, 공격력 {1}".format(self.hp, self.damage))
+
+
+# marin1 = unit("마린", 40, 5)
+# marin2 = unit("마린", 40, 5)
+# tank = unit("탱크", 150, 35)
+
+# # 레이스
+# wraith1 = unit("레이스", 80, 5)
+# print("유닛 이름:{0}, 공격력 : {1}".format(wraith1.name, wraith1.damage))  # 읽는것도 가능
+
+# # 마인드 컨트롤
+# wraith2 = unit("빼앗은 레이스", 80, 5)
+# wraith2.cloking = True  # 객체에 외부에서 만든 변수 넣을수 있음
+
+# if wraith2.clocking == True:
+#     print("{0} 는 현재 클로킹 상태입니다.".format(format(wraith2.name)))
+
+# # --------------------------------------------------------챕터 9-2 __init__----------------------------------------------------------------
+# __init__ 생성자 클래스로 만들어지는것 객체 마린과 탱크는 unit 클래스에 인스탄트다
+
+# # --------------------------------------------------------챕터 9-3 맴버변수----------------------------------------------------------------
+# self. 뒤에 오는거 맴버 변수다
+
+# # --------------------------------------------------------챕터 9-4 메소드----------------------------------------------------------------
+# # --------------------------------------------------------챕터 9-5 상속----------------------------------------------------------------
+
+# #일반 유닛
+# class unit:
+#     def __init__(self, name, hp):  # __init__ 생성자 클래스로 만들어지는것 객체 마린과 탱크는 unit 클래스에 인스탄트다
+#         self.name = name  # self. 뒤에 오는거 맴버 변수다
+#         self.hp = hp
+
+# #공격 유닛
+# class AttackUnit(unit):  # 상속 받을려면 상속받는애(상속주는애)
+#     def __init__(self, name, hp, damage):
+#         unit.__init__(self, name, hp) #상속
+#         self.damage = damage
+
+#     def attack(self, location):
+#         print("{0} : {1} 방향으로 적군을 공격 합니다.[공격력 {2}".format(
+#             self.name, location, self.damage))
+
+#     def damaged(self, damage):
+#         print("{0} : {1} 데미지를 입었습니다.".format(self.name, damage))
+#         self.hp -= damage
+#         print("{0} : 현재 체력은 {1} 입니다.".format(self.name, self.hp))
+#         if self.hp <= 0:
+#             print("{0} : 파괴되었습니다.".format(self.name))
+
+
+# # 파이어뱃
+# firebat1 = AttackUnit("파이어뱃", 50, 16)
+# firebat1.attack("5시") #메소드 사용
+
+# # 공격 2번 맞음
+# firebat1.damaged(25)
+# firebat1.damaged(25)

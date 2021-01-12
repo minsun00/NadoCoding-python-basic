@@ -83,6 +83,6 @@ from math import*
 
 # 퀴즈 7 챕터 8
 
-for week in range(1, 51):
-    with open("{0}주차.text".format(week), "w", encoding="utf8") as weeks_file:
-        weeks_file.write("- {0} 주차 주간보고 -\n부서 :\n이름 :\n업무 요약 :".format(week))
+# for week in range(1, 51):
+#     with open("{0}주차.text".format(week), "w", encoding="utf8") as weeks_file:
+#         weeks_file.write("- {0} 주차 주간보고 -\n부서 :\n이름 :\n업무 요약 :".format(week))
